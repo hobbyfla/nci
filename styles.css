@@ -1,0 +1,99 @@
+html {
+  scroll-behavior: smooth;
+}
+body {
+	background: lightgray;
+	font-family: Arial, Helvetica, sans-serif;
+	margin: 0;
+	padding: 20px;
+	box-sizing: border-box;
+}
+
+p, h1, h2, h3, h4, h5, ul, li {
+	color: rgb(34, 34, 34);
+}
+
+h1, h2, h3, h4, h5, h {
+	text-shadow: 1px 1px rgb(183, 177, 177);
+}
+
+h3 {
+	margin: 2px 0px 0px 0px;
+} 
+
+span , a:link, a:visited, a:hover, a:active {
+	color: rgb(62, 58, 58);
+	text-decoration: none;
+	text-shadow: none;
+}
+
+div {
+	margin: 10px;
+}
+
+.st-list, ul {
+	list-style-type: disclosure-closed;
+	padding-left: 0;
+}
+
+.st-list li, ul li {
+	margin-bottom: 5px;
+}
+
+.st-underline {
+	text-decoration: underline;
+}
+
+h1.st-cv {
+	text-align: center;
+	width: 100%;
+}
+
+.st-quick-button{
+	margin-right: 10px;
+	border: solid 1px #827f7f;
+	padding: 5px;
+	background-color: #b1b1b1;
+	border-radius: 5px;
+	font-size: 14px;
+}
+
+.container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.section {
+	flex: 1 1 30%;
+	margin: 10px;
+}
+
+@media (max-width: 768px) {
+	.container {
+			flex-direction: column;
+	}
+
+	.section {
+			flex-basis: 100%;
+	}
+}
+
+@media (max-width: 500px) {
+	body {
+			padding: 10px;
+	}
+
+	h1, h2, h3 {
+			font-size: 1.2em;
+	}
+
+	p, li {
+			font-size: 1em;
+	}
+
+	.st-quick-button {
+			display: block;
+			margin-bottom: 10px;
+	}
+}
