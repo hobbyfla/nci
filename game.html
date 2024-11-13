@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Week 8 LAB - Rock, Paper, Scissors Game</title>
+</head>
+
+<body>
+  <h1>Rock, Paper, Scissors</h1>
+  <button onclick="playGame()">Play</button>
+  <script>
+    function playGame() {
+      var userChoice = prompt("Enter rock, paper, or scissors:").toLowerCase();
+      var choices = ["rock", "paper", "scissors"];
+      var gameChoice = choices[Math.floor(Math.random() * 3)];
+
+      if (userChoice !== "rock" && userChoice !== "paper" && userChoice !== "scissors") {
+        alert("Invalid choice. Please enter rock, paper, or scissors.");
+        return;
+      }
+
+      alert("Computer chose: " + gameChoice);
+
+      if (userChoice === gameChoice) alert("It's a tie!");
+      else if (userChoice === "rock")
+        if (gameChoice === "scissors") alert("You win! Rock beats scissors.");
+        else alert("You lose! Paper beats rock.");
+
+      else if (userChoice === "paper")
+        if (gameChoice === "rock") alert("You win! Paper beats rock.");
+        else alert("You lose! Scissors beat paper.");
+
+      else if (userChoice === "scissors")
+        if (gameChoice === "paper") alert("You win! Scissors beat paper.");
+        else alert("You lose! Rock beats scissors.");
+
+    }
+  </script>
+</body>
+
+</html>
