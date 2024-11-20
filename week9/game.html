@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Week 9 LAB - Rock, Paper, Scissors Game</title>
+</head>
+
+<body>
+  <h1>Rock, Paper, Scissors</h1>
+  <button onclick="playGame()">Play</button>
+  <script>
+    function playGame() {
+      let choices = ["rock", "paper", "scissors"];
+      let rounds = 0;
+
+      while (rounds < 3) {
+        let userChoice = prompt("Rock, paper, or scissors?").toLowerCase();
+        if (!choices.includes(userChoice)) {
+          alert("Invalid choice!");
+          continue;
+        }
+
+        // Computer's guess changes each time
+        let computerChoice = choices[(rounds + 1) % choices.length];
+        alert("Computer chose: " + computerChoice);
+
+        if (userChoice === computerChoice) alert("It's a tie!");
+        else if (
+          (userChoice === "rock" && computerChoice === "scissors") ||
+          (userChoice === "paper" && computerChoice === "rock") ||
+          (userChoice === "scissors" && computerChoice === "paper")
+        ) {
+          alert("You win! " + userChoice + " beats " + computerChoice + ".");
+          return; // Stop the game if the user wins
+        } else alert("You lose! " + computerChoice + " beats " + userChoice + ".");
+        rounds++;
+      }
+    }
+  </script>
+</body>
+
+</html>
